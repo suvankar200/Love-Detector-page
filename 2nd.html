@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Button on Mouse Touch</title>
+<style>
+    #moveButton {
+        position: absolute;
+        top: 50px; /* Initial position from top */
+        left: 50px; /* Initial position from left */
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+</style>
+</head>
+<body>
+
+<button id="moveButton" onmouseover="moveButton()">Hover Over Me</button>
+
+<script>
+    function moveButton() {
+        var button = document.getElementById("moveButton");
+        var newX = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+        var newY = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+        button.style.left = newX + "px";
+        button.style.top = newY + "px";
+    }
+</script>
+
+</body>
+</html>
